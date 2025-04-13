@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OLD FALCON | Esports Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>OLD FALCON | Turjo Sarker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --bg: #0d0d0d;
-      --primary: #00e0ff;
-      --text: #ffffff;
-      --secondary: #999;
-      --card-bg: #1a1a1a;
+      --bg-color: #0b0f1a;
+      --text-color: #ffffff;
+      --accent-color: #00e0ff;
+      --secondary-color: #999999;
     }
 
     * {
@@ -23,159 +22,208 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-    }
-
-    header {
-      height: 100vh;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/mnt/data/Messenger_creation_77291559-9B2F-409B-B7F0-3313257A40FD.jpeg') no-repeat center center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 4em;
-      color: var(--primary);
-      margin-bottom: 10px;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-
-    header p {
-      font-size: 1.3em;
-      color: var(--secondary);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
     }
 
     nav {
-      background: #111;
-      padding: 20px;
+      background-color: #111;
+      padding: 20px 40px;
       display: flex;
-      justify-content: center;
-      gap: 40px;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    nav a {
+    nav h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2em;
+      color: var(--accent-color);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    nav img {
+      width: 60px;
+      height: 60px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: var(--text-color);
       text-decoration: none;
-      color: var(--text);
       font-weight: 500;
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: var(--primary);
+    nav ul li a:hover {
+      color: var(--accent-color);
+    }
+
+    header {
+      padding: 100px 20px 60px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b0f1a 0%, #1f1f2e 100%);
+    }
+
+    header h2 {
+      font-size: 3em;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent-color);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    header p {
+      font-size: 1.3em;
+      color: var(--secondary-color);
+      margin-top: 15px;
+    }
+
+    .logo-section {
+      text-align: center;
+      margin-top: 40px;
+      animation: pulse 4s infinite;
+    }
+
+    .logo-section img {
+      width: 240px;
+      border-radius: 20px;
     }
 
     section {
-      padding: 80px 20px;
+      padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
-    h2 {
-      text-align: center;
-      font-size: 2.8em;
-      color: var(--primary);
-      margin-bottom: 50px;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      padding: 30px;
-      border-radius: 12px;
+    section h3 {
+      font-size: 2.4em;
       margin-bottom: 30px;
-      box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
-      transition: 0.3s;
+      color: var(--accent-color);
+      text-align: center;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
     }
 
-    .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 30px rgba(0, 224, 255, 0.2);
+    .team-member {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #333;
+      background-color: #1a1a2e;
+      border-radius: 10px;
+      transition: 0.4s ease;
+    }
+
+    .team-member:hover {
+      transform: scale(1.03);
+      border-color: var(--accent-color);
     }
 
     footer {
       background-color: #111;
+      color: var(--secondary-color);
+      padding: 30px;
       text-align: center;
-      color: var(--secondary);
-      padding: 40px 20px;
+      font-size: 0.9em;
     }
 
-    .socials a {
-      color: var(--primary);
-      font-size: 1.5em;
-      margin: 0 15px;
+    .social-icons a {
+      color: var(--accent-color);
+      font-size: 1.4em;
+      margin: 0 10px;
       transition: 0.3s;
     }
 
-    .socials a:hover {
+    .social-icons a:hover {
       color: #fff;
     }
 
     @keyframes glow {
-      from { text-shadow: 0 0 10px #00e0ff; }
-      to { text-shadow: 0 0 30px #00e0ff; }
+      0% {
+        text-shadow: 0 0 10px #00e0ff, 0 0 20px #00e0ff;
+      }
+      100% {
+        text-shadow: 0 0 20px #00e0ff, 0 0 30px #00e0ff;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>OLD FALCON</h1>
-    <p>Turjo Sarker | Pro Esports Sniper | Team OLD CLASHERS</p>
-  </header>
-
   <nav>
-    <a href="#about">About</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
+    <h1>
+      <img src="/mnt/data/Messenger_creation_77291559-9B2F-409B-B7F0-3313257A40FD.jpeg" alt="Logo">
+      OLD FALCON
+    </h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
+  <header>
+    <h2>Turjo Sarker</h2>
+    <p>Professional Esports Sniper | Team OLD CLASHERS</p>
+  </header>
+
+  <div class="logo-section">
+    <img src="/mnt/data/Messenger_creation_77291559-9B2F-409B-B7F0-3313257A40FD.jpeg" alt="OLD FALCON Logo">
+  </div>
+
   <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      <p>Hey, I’m <strong>Turjo Sarker</strong>, known as <strong>OLD FALCON</strong> in the Free Fire esports community. I specialize as a sniper for <strong>Team OLD CLASHERS</strong>. My accuracy, timing, and strategic mindset help my team dominate the battlefield. I’m passionate about competitive gaming and constantly sharpening my skills in high-stakes tournaments.</p>
-    </div>
+    <h3>About Me</h3>
+    <p>My name is Turjo Sarker, better known by my in-game name <strong>OLD FALCON</strong>. I am a dedicated esports athlete and a skilled sniper representing <strong>Team OLD CLASHERS</strong> in the competitive Free Fire scene. I specialize in precision, clutch plays, and high-pressure scenarios where every shot counts.</p>
   </section>
 
   <section id="team">
-    <h2>Team OLD CLASHERS</h2>
-    <div class="card">
-      <strong>OLD OCEAN</strong> (Mridul Khan) – Team Leader / Main Rusher<br>
-      Leads with precision and unmatched rushing skills. A fearless tactician.
+    <h3>Our Team</h3>
+    <div class="team-member">
+      <strong>OLD OCEAN (Mridul Khan)</strong> - Team Leader & Main Rusher<br>
+      With unmatched strategy and fearless rushes, Mridul leads the team with experience and energy.
     </div>
-    <div class="card">
-      <strong>OLD XENON</strong> (Muhammad Sajim) – Second Rusher<br>
-      Aggressive and tactical, Xenon pushes with power and intelligence.
+    <div class="team-member">
+      <strong>OLD XENON (Muhammad Sajim)</strong> - Second Rusher<br>
+      A tactical genius and aggressive fighter, Xenon is the spearhead in many of our victories.
     </div>
-    <div class="card">
-      <strong>OLD SUHAIL</strong> (Suhail Ahmed Sami) – Support Player<br>
-      Keeps the team strong and steady under pressure with key support plays.
+    <div class="team-member">
+      <strong>OLD SUHAIL (Suhail Ahmed Sami)</strong> - Support Player<br>
+      The foundation of our success, Suhail keeps the team steady and provides essential cover and backup.
     </div>
-    <div class="card">
-      <strong>OLD FALCON</strong> (Turjo Sarker) – Sniper<br>
-      That’s me! I lock down enemies from distance and turn the tide with every headshot.
+    <div class="team-member">
+      <strong>OLD FALCON (Turjo Sarker)</strong> - Sniper Specialist<br>
+      I provide long-range cover and make key eliminations that shift the tide of battle in our favor.
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:tsturjo2009@gmail.com">tsturjo2009@gmail.com</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/old_falcon_24" target="_blank">@old_falcon_24</a></p>
-      <div class="socials">
-        <a href="https://www.instagram.com/old_falcon_24" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:tsturjo2009@gmail.com">tsturjo2009@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/old_falcon_24" target="_blank">@old_falcon_24</a></p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/old_falcon_24" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 OLD FALCON. Built with passion for gaming.
+    &copy; 2025 OLD FALCON | All rights reserved.
   </footer>
 </body>
-</html>
+    </html>
