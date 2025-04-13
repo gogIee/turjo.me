@@ -1,86 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Turjo Sarker | Esports Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #0e0e0e;
-      color: #fff;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0c0c0c;
+      color: #fff;
+    }
+    nav {
+      background: #111;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    }
+    nav h1 {
+      font-size: 1.8em;
+      color: #00ffcc;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #00ffcc;
     }
     header {
-      background-color: #1f1f1f;
-      padding: 20px;
+      padding: 100px 20px;
       text-align: center;
+      background: linear-gradient(to bottom, #111, #1a1a1a);
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+    header h2 {
+      font-size: 3em;
       color: #00ffcc;
     }
     header p {
       font-size: 1.2em;
-      color: #ccc;
+      margin-top: 10px;
+      color: #aaa;
     }
-    .section {
-      padding: 40px 20px;
-      max-width: 900px;
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
       margin: auto;
     }
-    .section h2 {
+    h3 {
+      font-size: 2em;
+      margin-bottom: 20px;
       color: #00ffcc;
+    }
+    .team-member, .contact-info {
       margin-bottom: 20px;
     }
-    .team-member {
-      margin-bottom: 10px;
-    }
-    .contact a {
+    a {
       color: #00ffcc;
       text-decoration: none;
     }
     footer {
+      background: #111;
       text-align: center;
       padding: 20px;
-      background-color: #1f1f1f;
-      color: #888;
+      color: #777;
       font-size: 0.9em;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 1.2em;
     }
   </style>
 </head>
 <body>
+  <nav>
+    <h1>OLD FALCON</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <h1>Turjo Sarker</h1>
-    <p>In-Game Name: <strong>OLD FALCON</strong> | Esports Sniper Player</p>
-    <p>Team: <strong>OLD CLASHERS</strong></p>
+    <h2>Turjo Sarker</h2>
+    <p>Esports Sniper | Free Fire Pro | Team OLD CLASHERS</p>
   </header>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>I am an esports player specializing as a sniper in the competitive Free Fire scene. I represent the team <strong>OLD CLASHERS</strong>, known for our fierce gameplay and brotherhood.</p>
-  </div>
+  <section id="about">
+    <h3>About Me</h3>
+    <p>I’m <strong>Turjo Sarker</strong>, known in-game as <strong>OLD FALCON</strong>. I’m a professional sniper player in the Free Fire esports community, part of the elite squad <strong>OLD CLASHERS</strong>. Passion, precision, and performance define my gameplay style.</p>
+  </section>
 
-  <div class="section">
-    <h2>About My Team</h2>
-    <p><strong>OLD CLASHERS</strong> is a well-known team in the Free Fire community, recognized for strategic gameplay and solid team coordination.</p>
-    <div class="team-member"><strong>Team Leader:</strong> OLD OCEAN (Mridul Khan) - Main Rusher</div>
+  <section id="team">
+    <h3>About My Team</h3>
+    <p><strong>OLD CLASHERS</strong> is a top-tier Free Fire esports team with skilled members and strong synergy.</p>
+    <div class="team-member"><strong>Leader:</strong> OLD OCEAN (Mridul Khan) – Main Rusher</div>
     <div class="team-member"><strong>2nd Rusher:</strong> OLD XENON (Muhammad Sajim)</div>
     <div class="team-member"><strong>Support:</strong> OLD SUHAIL (Suhail Ahmed Sami)</div>
     <div class="team-member"><strong>Sniper:</strong> OLD FALCON (Turjo Sarker)</div>
-  </div>
+  </section>
 
-  <div class="section contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:tsturjo2009@gmail.com">tsturjo2009@gmail.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/old_falcon_24" target="_blank">@old_falcon_24</a></p>
-  </div>
+  <section id="contact">
+    <h3>Contact Me</h3>
+    <div class="contact-info">Email: <a href="mailto:tsturjo2009@gmail.com">tsturjo2009@gmail.com</a></div>
+    <div class="contact-info">Instagram: <a href="https://www.instagram.com/old_falcon_24" target="_blank">@old_falcon_24</a></div>
+    <div class="social-icons">
+      <a href="mailto:tsturjo2009@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/old_falcon_24" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 Turjo Sarker. All rights reserved.
+    &copy; 2025 Turjo Sarker | OLD FALCON | All rights reserved.
   </footer>
 </body>
 </html>
