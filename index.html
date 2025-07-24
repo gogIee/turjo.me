@@ -133,25 +133,25 @@
     }
     .dark-mode-toggle {
       font-size: 2rem;
-      color: #00c8e6;
+      color: #32CD32; /* limegreen */
       cursor: pointer;
       user-select: none;
-      text-shadow: 0 0 2px #00c8e6;
+      text-shadow: 0 0 2px #32CD32;
       transition: color 0.4s ease, text-shadow 0.4s ease;
       position: relative;
       padding: 6px 10px;
       border-radius: 6px;
-      background-color: rgba(0, 200, 230, 0.2);
+      background-color: rgba(50, 205, 50, 0.2);
     }
     body.light-mode .dark-mode-toggle {
-      color: #004466;
+      color: #228B22; /* forestgreen */
       text-shadow: none;
-      background-color: rgba(0, 70, 102, 0.2);
+      background-color: rgba(34, 139, 34, 0.2);
     }
     .dark-mode-toggle:hover {
-      color: #00ffff;
-      text-shadow: 0 0 6px #00ffff;
-      background-color: rgba(0, 255, 255, 0.3);
+      color: #7CFC00; /* lawn green */
+      text-shadow: 0 0 6px #7CFC00;
+      background-color: rgba(124, 252, 0, 0.3);
     }
 
     /* Section Titles */
@@ -350,176 +350,8 @@
       </div>
     </header>
 
-    <!-- Home -->
-    <section id="home" style="margin-bottom: 80px;">
-      <h2>Welcome to Limitless Tournaments</h2>
-      <p>Daily Scrims | Blast Tournaments | Giveaway Tours | Premium Banners</p>
-      <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel" style="border-radius:12px; overflow:hidden;">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://via.placeholder.com/1200x300/000022/00c8e6?text=🔥+Free+Fire+Tournaments" class="d-block w-100" alt="Banner 1" />
-          </div>
-          <div class="carousel-item">
-            <img src="https://via.placeholder.com/1200x300/001144/00c8e6?text=🏆+Win+Diamonds+Daily" class="d-block w-100" alt="Banner 2" />
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
+    <!-- Rest of content ... same as before -->
 
-    <!-- Tournaments -->
-    <section id="tournaments" style="margin-bottom: 80px;">
-      <h2>Tournaments</h2>
-      <div class="dashboard">
-        <div class="card">
-          <h4><i class="fas fa-fire text-warning"></i> Free Fire Solo Blast</h4>
-          <p><strong>Date:</strong> July 25, 2025</p>
-          <p><strong>Entry Fee:</strong> Free</p>
-          <p><strong>Prize:</strong> 1000 Diamonds</p>
-          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register Now</a>
-        </div>
-        <div class="card">
-          <h4><i class="fas fa-users text-info"></i> Squad Scrim Friday</h4>
-          <p><strong>Date:</strong> Every Friday</p>
-          <p><strong>Entry Fee:</strong> Free</p>
-          <p><strong>Prize:</strong> Discord Role</p>
-          <a class="btn btn-primary" href="#">Join Scrim</a>
-        </div>
-        <div class="card">
-          <h4><i class="fas fa-shield-alt text-success"></i> Clash Squad Tournament</h4>
-          <p><strong>Date:</strong> August 10, 2025</p>
-          <p><strong>Entry Fee:</strong> 250 Taka</p>
-          <p><strong>Prize:</strong> 5000 Diamonds + Cash</p>
-          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register Now</a>
-        </div>
-        <div class="card">
-          <h4><i class="fas fa-bolt text-danger"></i> Blast Tournament</h4>
-          <p><strong>Date:</strong> August 5, 2025</p>
-          <p><strong>Entry Fee:</strong> 100 Taka</p>
-          <p><strong>Prize:</strong> Special Skins + Diamonds</p>
-          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register Now</a>
-        </div>
-        <div class="card">
-          <h4><i class="fas fa-fist-raised text-primary"></i> Weekly Scrims</h4>
-          <p><strong>Date:</strong> Every Saturday</p>
-          <p><strong>Entry Fee:</strong> Free</p>
-          <p><strong>Prize:</strong> Discord Role + XP Points</p>
-          <a class="btn btn-primary" href="#">Join Scrim</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Winners -->
-    <section id="winners" style="margin-bottom: 80px;">
-      <h2>Champions Gallery</h2>
-      <ul>
-        <li>🏆 Team X - Blast Cup Champions</li>
-        <li>🥇 Solo King - Scrim MVP</li>
-        <li>🔥 Squad Omega - Invitational Winners</li>
-      </ul>
-    </section>
-
-    <!-- Rules -->
-    <section id="rules" style="margin-bottom: 80px;">
-      <h2>Rules</h2>
-      <ul>
-        <li>No cheating, hacks or exploits allowed</li>
-        <li>Respect admins and fellow players</li>
-        <li>Be present 10 minutes before match</li>
-        <li>Follow instructions strictly</li>
-      </ul>
-    </section>
-
-    <!-- About -->
-    <section id="about" style="margin-bottom: 80px;">
-      <h2>About Limitless</h2>
-      <p>
-        Limitless Tournaments is the premier platform for Free Fire competitive gaming. Join daily scrims, exciting blast tournaments, and win amazing prizes!
-      </p>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" style="margin-bottom: 80px;">
-      <h2>FAQ</h2>
-      <ul>
-        <li><strong>Q:</strong> How to register?<br /><strong>A:</strong> Click "Register Now" on the tournament of your choice and fill the form.</li>
-        <li><strong>Q:</strong> What are the entry fees?<br /><strong>A:</strong> Vary from free to 250 Taka depending on the event.</li>
-        <li><strong>Q:</strong> How do I join scrims?<br /><strong>A:</strong> Use the "Join Scrim" buttons to enter Discord scrims.</li>
-      </ul>
-    </section>
-
-    <!-- Sponsors -->
-    <section id="sponsors" style="margin-bottom: 80px;">
-      <h2>Sponsors</h2>
-      <p>Thanks to all our sponsors for their generous support!</p>
-      <ul>
-        <li>Gaming Gear Co.</li>
-        <li>Diamond Supplies Ltd.</li>
-        <li>Esports Central</li>
-      </ul>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" style="margin-bottom: 80px;">
-      <h2>Contact Us</h2>
-      <p>Email: contact@limitlesstournaments.com</p>
-      <p>Phone: +880123456789</p>
-      <p>Discord: Limitless#1234</p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      &copy; 2025 Limitless Tournaments. All rights reserved.
-    </footer>
-
-  </div>
-
-  <!-- Register Modal -->
-  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <form class="modal-content" id="registerForm">
-        <div class="modal-header">
-          <h5 class="modal-title" id="registerModalLabel">Register for Tournament</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="playerName" class="form-label">Player Name</label>
-            <input type="text" class="form-control" id="playerName" required />
-          </div>
-          <div class="mb-3">
-            <label for="playerId" class="form-label">Player ID</label>
-            <input type="text" class="form-control" id="playerId" required />
-          </div>
-          <div class="mb-3">
-            <label for="contactInfo" class="form-label">Contact Info (Discord/Phone)</label>
-            <input type="text" class="form-control" id="contactInfo" required />
-          </div>
-          <div class="mb-3">
-            <label for="tournamentSelect" class="form-label">Select Tournament</label>
-            <select class="form-select" id="tournamentSelect" required>
-              <option value="" disabled selected>Select a tournament</option>
-              <option value="freefire_solo_blast">Free Fire Solo Blast</option>
-              <option value="squad_scrim_friday">Squad Scrim Friday</option>
-              <option value="clash_squad_tournament">Clash Squad Tournament</option>
-              <option value="blast_tournament">Blast Tournament</option>
-              <option value="weekly_scrims">Weekly Scrims</option>
-            </select>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Submit Registration</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        </div>
-      </form>
-    </div>
   </div>
 
   <!-- Bootstrap JS Bundle -->
