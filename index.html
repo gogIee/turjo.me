@@ -8,7 +8,6 @@
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 
@@ -132,18 +131,34 @@
       text-shadow: none;
     }
 
-    /* Dark Mode Toggle Icon */
+    /* Dark mode toggle */
     .dark-mode-toggle {
+      position: relative;
       font-size: 2rem;
       cursor: pointer;
       user-select: none;
-      transition: color 0.4s ease, text-shadow 0.4s ease;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background-color 0.4s ease;
+      /* default background for dark mode */
+      background-color: #004400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    /* Icon colors set by JS */
-
+    .dark-mode-toggle i {
+      transition: color 0.4s ease;
+      /* default icon color dark mode */
+      color: black;
+    }
+    body.light-mode .dark-mode-toggle {
+      background-color: #007700;
+    }
+    body.light-mode .dark-mode-toggle i {
+      color: white;
+    }
     .dark-mode-toggle:hover {
-      color: #00ffff;
-      text-shadow: 0 0 2px #00ffff;
+      background-color: #00aa00;
     }
 
     /* Section Titles */
@@ -308,6 +323,7 @@
     body.light-mode .btn-close {
       filter: invert(0%);
     }
+
   </style>
 </head>
 <body>
@@ -342,14 +358,31 @@
       </div>
     </header>
 
-    <!-- Sections -->
-
+    <!-- Home -->
     <section id="home" style="margin-bottom: 80px;">
       <h2>Welcome to Limitless Tournaments</h2>
       <p>Daily Scrims | Blast Tournaments | Giveaway Tours | Premium Banners</p>
-      <!-- Carousel or banner can be added here -->
+      <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel" style="border-radius:12px; overflow:hidden;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://via.placeholder.com/1200x300/000022/00c8e6?text=🔥+Free+Fire+Tournaments" class="d-block w-100" alt="Banner 1" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/1200x300/001144/00c8e6?text=🏆+Win+Diamonds+Daily" class="d-block w-100" alt="Banner 2" />
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </section>
 
+    <!-- Tournaments -->
     <section id="tournaments" style="margin-bottom: 80px;">
       <h2>Tournaments</h2>
       <div class="dashboard">
@@ -391,6 +424,7 @@
       </div>
     </section>
 
+    <!-- Winners -->
     <section id="winners" style="margin-bottom: 80px;">
       <h2>Champions Gallery</h2>
       <ul>
@@ -400,6 +434,7 @@
       </ul>
     </section>
 
+    <!-- Rules -->
     <section id="rules" style="margin-bottom: 80px;">
       <h2>Rules</h2>
       <ul>
@@ -410,6 +445,7 @@
       </ul>
     </section>
 
+    <!-- About -->
     <section id="about" style="margin-bottom: 80px;">
       <h2>About Limitless</h2>
       <p>
@@ -417,43 +453,41 @@
       </p>
     </section>
 
+    <!-- FAQ -->
     <section id="faq" style="margin-bottom: 80px;">
       <h2>FAQ</h2>
       <ul>
-        <li><strong>Q:</strong> How to join a tournament?<br /><strong>A:</strong> Click register and follow instructions.</li>
-        <li><strong>Q:</strong> What is the entry fee?<br /><strong>A:</strong> Entry fees vary per tournament, mostly free or 250 Taka.</li>
-        <li><strong>Q:</strong> Where to find winners list?<br /><strong>A:</strong> Check Champions Gallery section.</li>
+        <li>Q: How do I register? <br> A: Click the register buttons on tournaments section.</li>
+        <li>Q: Are tournaments free? <br> A: Some are free, some require a small entry fee.</li>
+        <li>Q: Where can I join the Discord? <br> A: Link available on the Contact section.</li>
       </ul>
     </section>
 
+    <!-- Sponsors -->
     <section id="sponsors" style="margin-bottom: 80px;">
-      <h2>Our Sponsors</h2>
-      <p>We are proud to be supported by:</p>
-      <ul>
-        <li>XYZ Gaming</li>
-        <li>ABC Tech</li>
-        <li>Free Fire Community Bangladesh</li>
-      </ul>
+      <h2>Sponsors & Partners</h2>
+      <p>We proudly collaborate with leading brands to bring you the best tournaments.</p>
     </section>
 
+    <!-- Contact -->
     <section id="contact" style="margin-bottom: 80px;">
       <h2>Contact Us</h2>
-      <p>For queries and support, contact us:</p>
-      <ul>
-        <li>Email: support@limitlesstournaments.com</li>
-        <li>Phone: +880123456789</li>
-        <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61578322031694" target="_blank" style="color:#00c8e6; text-decoration:none;">Limitless Facebook Page</a></li>
-      </ul>
+      <p>Email: support@limitlesstournaments.com</p>
+      <p>Phone: +880 1234 567890</p>
+      <p>Follow us on social media for updates and announcements.</p>
     </section>
 
+    <footer>
+      &copy; 2025 Limitless Tournaments. All rights reserved.
+    </footer>
   </div>
 
   <!-- Register Modal -->
   <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="registerModalLabel">Register for Tournament</h5>
+          <h5 class="modal-title" id="registerModalLabel">Tournament Registration</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -463,13 +497,13 @@
               <input type="text" class="form-control" id="playerName" required />
             </div>
             <div class="mb-3">
-              <label for="playerID" class="form-label">In-Game ID</label>
-              <input type="text" class="form-control" id="playerID" required />
+              <label for="contactInfo" class="form-label">Contact Info</label>
+              <input type="text" class="form-control" id="contactInfo" required />
             </div>
             <div class="mb-3">
-              <label for="tournamentSelect" class="form-label">Select Tournament</label>
+              <label for="tournamentSelect" class="form-label">Tournament</label>
               <select class="form-select" id="tournamentSelect" required>
-                <option value="">Choose...</option>
+                <option value="">Select Tournament</option>
                 <option value="Free Fire Solo Blast">Free Fire Solo Blast</option>
                 <option value="Squad Scrim Friday">Squad Scrim Friday</option>
                 <option value="Clash Squad Tournament">Clash Squad Tournament</option>
@@ -477,44 +511,46 @@
                 <option value="Weekly Scrims">Weekly Scrims</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit Registration</button>
+            <button type="submit" class="btn btn-primary w-100">Submit Registration</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Bootstrap JS and dependencies -->
+  <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
+    // Dark Mode Toggle
     const toggle = document.getElementById('darkModeToggle');
-    const body = document.body;
     const icon = toggle.querySelector('i');
+    const body = document.body;
 
-    // On load, set theme based on localStorage
-    if (localStorage.getItem('theme') === 'light') {
+    // Load mode from localStorage
+    if (localStorage.getItem('mode') === 'light') {
       body.classList.add('light-mode');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
     }
-
-    function updateIconColor() {
-      if (body.classList.contains('light-mode')) {
-        icon.style.color = '#00c8e6';  // Light mode icon color (blue)
-      } else {
-        icon.style.color = '#000000';  // Dark mode icon color (black)
-      }
-    }
-    updateIconColor();
 
     toggle.addEventListener('click', () => {
       body.classList.toggle('light-mode');
-      localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
-      updateIconColor();
+      if (body.classList.contains('light-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('mode', 'light');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('mode', 'dark');
+      }
     });
 
-    // Mobile menu toggle (optional)
+    // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const sidebar = document.getElementById('sidebar');
+
     mobileMenuBtn.addEventListener('click', () => {
       if (sidebar.style.display === 'block') {
         sidebar.style.display = 'none';
@@ -523,17 +559,14 @@
       }
     });
 
-    // Register form submission (dummy)
-    const registerForm = document.getElementById('registerForm');
-    registerForm.addEventListener('submit', e => {
+    // Register form submit
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Registration submitted! We will contact you soon.');
-      registerForm.reset();
-      const modalEl = document.getElementById('registerModal');
-      const modal = bootstrap.Modal.getInstance(modalEl);
-      modal.hide();
+      alert('Registration submitted! Thank you.');
+      this.reset();
+      const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+      registerModal.hide();
     });
   </script>
-
 </body>
 </html>
