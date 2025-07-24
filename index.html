@@ -6,13 +6,13 @@
   <title>Limitless Tournaments</title>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 
-  <style>
+ <style>
     /* ====== Base Styles ====== */
     body {
       font-family: 'Orbitron', sans-serif;
@@ -360,7 +360,24 @@
     <section id="home" style="margin-bottom: 80px;">
       <h2>Welcome to Limitless Tournaments</h2>
       <p>Daily Scrims | Blast Tournaments | Giveaway Tours | Premium Banners</p>
-      <!-- Add carousel or banners here -->
+      <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel" style="border-radius:12px; overflow:hidden;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://postimg.cc/PCSjG4Vq=🔥+Free+Fire+Tournaments" class="d-block w-100" alt="Banner 1" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://postimg.cc/PCSjG4Vq/1200x300/001144/00c8e6?text=🏆+Win+Diamonds+Daily" class="d-block w-100" alt="Banner 2" />
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </section>
 
     <!-- Tournaments -->
@@ -405,7 +422,66 @@
       </div>
     </section>
 
-    <!-- Other sections here ... -->
+    <!-- Winners -->
+    <section id="winners" style="margin-bottom: 80px;">
+      <h2>Champions Gallery</h2>
+      <ul>
+        <li>🏆 Team X - Blast Cup Champions</li>
+        <li>🥇 Solo King - Scrim MVP</li>
+        <li>🔥 Squad Omega - Invitational Winners</li>
+      </ul>
+    </section>
+
+    <!-- Rules -->
+    <section id="rules" style="margin-bottom: 80px;">
+      <h2>Rules</h2>
+      <ul>
+        <li>No cheating, hacks or exploits allowed</li>
+        <li>Respect admins and fellow players</li>
+        <li>Be present 10 minutes before match</li>
+        <li>Follow instructions strictly</li>
+      </ul>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="margin-bottom: 80px;">
+      <h2>About Limitless</h2>
+      <p>
+        Limitless Tournaments is the premier platform for Free Fire competitive gaming. Join daily scrims, exciting blast tournaments, and win amazing prizes!
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="margin-bottom: 80px;">
+      <h2>FAQ</h2>
+      <ul>
+        <li><strong>Q:</strong> How to join a tournament?<br/><strong>A:</strong> Click register and follow instructions.</li>
+        <li><strong>Q:</strong> What is the entry fee?<br/><strong>A:</strong> Entry fees vary per tournament, mostly free or 250 Taka.</li>
+        <li><strong>Q:</strong> Where to find winners list?<br/><strong>A:</strong> Check Champions Gallery section.</li>
+      </ul>
+    </section>
+
+    <!-- Sponsors -->
+    <section id="sponsors" style="margin-bottom: 80px;">
+      <h2>Our Sponsors</h2>
+      <p>We are proud to be supported by:</p>
+      <ul>
+        <li>XYZ Gaming</li>
+        <li>ABC Tech</li>
+        <li>Free Fire Community Bangladesh</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="margin-bottom: 80px;">
+      <h2>Contact Us</h2>
+      <p>For queries and support, contact us:</p>
+      <ul>
+        <li>Email: support@limitlesstournaments.com</li>
+        <li>Phone: +880123456789</li>
+        <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61578322031694" target="_blank" style="color:#00c8e6; text-decoration:none;">Limitless Facebook Page</a></li>
+      </ul>
+    </section>
 
   </div>
 
@@ -472,7 +548,7 @@
     // Close sidebar on link click (mobile)
     sidebarLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if(window.innerWidth < 769){
+        if(window.innerWidth <= 768){
           sidebar.style.display = 'none';
         }
       });
@@ -480,3 +556,68 @@
   </script>
 </body>
 </html>
+<section id="contact" style="background: #000011; padding: 80px 20px;">
+  <h3 style="text-align: center; color: #fff; font-size: 2.5em; text-shadow: 2px 2px #00c8e6; margin-bottom: 40px;">CONTACT ME</h3>
+
+  <form id="contact-form" style="
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,200,230,0.2);
+  ">
+    <label style="color: #00c8e6; font-weight: 600;">Your name:</label>
+    <input type="text" name="name" placeholder="Enter your name" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00c8e6; background: transparent; color: #fff; font-size: 1em;">
+
+    <label style="color: #00c8e6; font-weight: 600;">Your Email:</label>
+    <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00c8e6; background: transparent; color: #fff; font-size: 1em;">
+
+    <label style="color: #00c8e6; font-weight: 600;">Subject:</label>
+    <input type="text" name="subject" placeholder="Subject" style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00c8e6; background: transparent; color: #fff; font-size: 1em;">
+
+    <label style="color: #00c8e6; font-weight: 600;">Your message:</label>
+    <textarea name="message" placeholder="Type your message here..." rows="5" required style="width: 100%; padding: 12px; margin: 10px 0 30px; border: 2px solid #00c8e6; border-radius: 10px; background: transparent; color: #fff; font-size: 1em; resize: vertical;"></textarea>
+
+    <button type="submit" id="send-btn" style="background: linear-gradient(135deg, #00c8e6, #009bb3); border: none; padding: 12px 30px; color: #000; font-weight: bold; border-radius: 30px; cursor: pointer; font-size: 1.1em; transition: background 0.3s ease;">Send</button>
+  </form>
+</section>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("VYKK057zR_OaMB7bb"); // Your Public Key
+  })();
+
+  const form = document.getElementById("contact-form");
+  const button = document.getElementById("send-btn");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+
+    emailjs.sendForm('service_vs72qje', 'template_vm9bbht', this)
+      .then(function() {
+        button.textContent = "Sent!";
+        form.reset();
+        setTimeout(() => {
+          button.textContent = "Send";
+          button.disabled = false;
+        }, 2000);
+      }, function(error) {
+        button.textContent = "Failed. Try again";
+        setTimeout(() => {
+          button.textContent = "Send";
+          button.disabled = false;
+        }, 3000);
+      });
+  });
+</script>
+
+ <footer>
+      &copy; 2025 Limitless Tournaments. All rights reserved.
+    </footer>
+</script>
