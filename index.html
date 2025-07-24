@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 
   <style>
-    /* ====== Base Styles ====== */
+    /* Base Styles */
     body {
       font-family: 'Orbitron', sans-serif;
       margin: 0;
@@ -131,27 +131,28 @@
     body.light-mode header.header h1 {
       text-shadow: none;
     }
+
+    /* Dark Mode Toggle Icon */
     .dark-mode-toggle {
       font-size: 2rem;
-      color: #32CD32; /* limegreen */
+      color: #000000; /* black in dark mode */
       cursor: pointer;
       user-select: none;
-      text-shadow: 0 0 2px #32CD32;
-      transition: color 0.4s ease, text-shadow 0.4s ease;
-      position: relative;
       padding: 6px 10px;
       border-radius: 6px;
-      background-color: rgba(50, 205, 50, 0.2);
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: color 0.4s ease, background-color 0.4s ease;
+      position: relative;
     }
     body.light-mode .dark-mode-toggle {
-      color: #228B22; /* forestgreen */
-      text-shadow: none;
-      background-color: rgba(34, 139, 34, 0.2);
+      color: #ffffff; /* white in light mode */
+      background-color: rgba(255, 255, 255, 0.2);
     }
     .dark-mode-toggle:hover {
-      color: #7CFC00; /* lawn green */
-      text-shadow: 0 0 6px #7CFC00;
-      background-color: rgba(124, 252, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    body.light-mode .dark-mode-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.3);
     }
 
     /* Section Titles */
@@ -350,7 +351,7 @@
       </div>
     </header>
 
-    <!-- Rest of content ... same as before -->
+    <!-- Your content here -->
 
   </div>
 
@@ -398,14 +399,6 @@
       }
     });
 
-    // Form submission (basic)
-    document.getElementById('registerForm').addEventListener('submit', e => {
-      e.preventDefault();
-      alert('Thank you for registering! We will contact you soon.');
-      const modal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-      modal.hide();
-      e.target.reset();
-    });
   </script>
 </body>
 </html>
