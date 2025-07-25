@@ -464,7 +464,76 @@
       </p>
     </section>
 
-    <!-- FAQ -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Limitless Tournaments</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000011;
+      color: #00c8e6;
+    }
+    header.header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(90deg, #00c8e6 0%, #0080b3 100%);
+      padding: 15px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 2px #00c8e6aa;
+      margin-bottom: 40px;
+      margin-top: 30px;
+      color: #000011;
+    }
+    body.light-mode header.header {
+      background: linear-gradient(90deg, #0077cc 0%, #004466 100%);
+      color: #e0f7ff;
+      box-shadow: 0 0 2px #0077ccaa;
+      margin-top: 30px;
+    }
+    header.header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    header.header .logo {
+      height: 60px;
+    }
+    .dark-mode-toggle {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <img src="https://i.postimg.cc/F7Gzg5g1/limitless-logo.png" alt="Limitless Logo" class="logo" />
+    <h1>Limitless Tournaments</h1>
+    <div class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode" role="button" aria-label="Toggle Dark Mode">
+      <i class="fas fa-moon"></i>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container py-4">
+    <section>
+      <h2>Welcome to Limitless Tournaments</h2>
+      <p>Daily Scrims | Blast Tournaments | Giveaway Tours | Premium Banners</p>
+    </section>
+
+    <!-- FAQ Section -->
     <section id="faq" style="margin-bottom: 80px;">
       <h2>FAQ</h2>
       <ul>
@@ -472,7 +541,75 @@
         <li><strong>Q:</strong> What is the entry fee?<br/><strong>A:</strong> Entry fees vary per tournament, mostly free or 250 Taka.</li>
         <li><strong>Q:</strong> Where to find winners list?<br/><strong>A:</strong> Check Champions Gallery section.</li>
       </ul>
+
+      <!-- Ask a Question Form -->
+      <div id="faq-form-container" style="margin-top:40px; max-width:500px; background:rgba(255,255,255,0.05); padding:32px; border-radius:14px; box-shadow:0 0 12px #00c8e622;">
+        <h3 style="color:#00c8e6; font-size:1.6em; font-weight:700; text-align:center; margin-bottom:18px;">Ask Your Question</h3>
+        <form id="faq-form">
+          <label style="color:#00c8e6; font-weight:600;">Your Question:</label>
+          <textarea name="faq_question" required rows="3" placeholder="Type your question here..." style="width:100%; padding:9px; margin:10px 0 22px; border:2px solid #00c8e6; border-radius:10px; background:transparent; color:#fff; font-size:1em; resize:vertical;"></textarea>
+          <button type="submit" id="faq-send-btn" style="background:linear-gradient(135deg,#00c8e6,#009bb3); border:none; padding:10px 28px; color:#000; font-weight:bold; border-radius:30px; cursor:pointer; font-size:1.05em; transition:background 0.3s;">Ask</button>
+        </form>
+        <div id="faq-thankyou" style="display:none; color:#00c8e6; text-align:center; margin-top:18px; font-weight:700;">Thank you! Your question has been sent.</div>
+      </div>
     </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-4" style="color: #00c8e6aa;">
+    &copy; 2025 Limitless Tournaments. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Dark Mode Toggle -->
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const icon = darkModeToggle.querySelector('i');
+      if(document.body.classList.contains('light-mode')){
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+  </script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("VYKK057zR_OaMB7bb");
+    })();
+
+    const faqForm = document.getElementById("faq-form");
+    const faqButton = document.getElementById("faq-send-btn");
+    const faqThankYou = document.getElementById("faq-thankyou");
+    faqForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      faqButton.disabled = true;
+      faqButton.textContent = "Sending...";
+      emailjs.sendForm('service_vs72qje', 'template_faq', this)
+        .then(function() {
+          faqForm.reset();
+          faqThankYou.style.display = "block";
+          faqButton.textContent = "Ask";
+          faqButton.disabled = false;
+          setTimeout(()=>faqThankYou.style.display="none", 4000);
+        }, function(error) {
+          faqButton.textContent = "Failed. Try again";
+          setTimeout(() => {
+            faqButton.textContent = "Ask";
+            faqButton.disabled = false;
+          }, 3000);
+        });
+    });
+  </script>
+</body>
+</html>
+
 
     <!-- Sponsors -->
     <section id="sponsors" style="margin-bottom: 80px;">
