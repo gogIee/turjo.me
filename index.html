@@ -464,7 +464,7 @@
       </p>
     </section>
 
-   <section id="faq" style="margin-bottom: 80px;">
+ <section id="faq" style="margin-bottom: 80px;">
   <h2>FAQ</h2>
   <ul id="default-faqs">
     <li><strong>Q:</strong> How to join a tournament?<br/><strong>A:</strong> Click register and follow instructions.</li>
@@ -474,11 +474,72 @@
   <hr>
   <h4>Ask your question</h4>
   <form id="faq-form" style="margin-bottom:20px;">
-    <input type="text" id="faq-question" placeholder="Type your question..." required style="padding:8px;width:70%;border-radius:8px;border:2px solid #00c8e6;">
+    <input type="text" id="faq-question" name="faq-question" placeholder="Type your question..." required style="padding:8px;width:70%;border-radius:8px;border:2px solid #00c8e6;">
     <button type="submit" style="padding:8px 20px;border:none;background:#00c8e6;color:#000;border-radius:8px;font-weight:bold;">Ask</button>
   </form>
+  <div id="faq-success" style="display:none;color:green;margin-bottom:10px;">Question sent!</div>
   <h5>User Questions</h5>
   <ul id="user-faqs"></ul>
+</section>
+
+<!-- Add EmailJS SDK if not already present -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+  emailjs.init("VYKK057zR_OaMB7bb"); // Your Public Key
+})();
+
+function loadFaqs() {
+  const faqs = JSON.parse(localStorage.getItem('userFaqs') || "[]");
+  const ul = document.getElementById('user-faqs');
+  ul.innerHTML = "";
+  faqs.forEach((faq, idx) => {
+    let html = `<li><strong>Q:</strong> ${faq.q}`;
+    if (faq.a) html += `<br/><strong>A:</strong> ${faq.a}`;
+    // Admin answer box (simple password check)
+    html += `<br/><input type="text" id="ans${idx}" placeholder="Type answer..." style="width:55%;padding:6px;border-radius:6px;border:1px solid #00c8e6;">
+    <button onclick="answerFaq(${idx})" style="padding:4px 12px;margin-left:5px;border-radius:6px;border:none;background:#00c8e6;color:#000;font-weight:bold;">Ans</button></li>`;
+    ul.innerHTML += html;
+  });
+}
+
+function answerFaq(idx) {
+  // Simple admin password prompt for answer (change 'adminpass'!)
+  if (prompt("Enter admin password:") !== "adminpass") return alert("Wrong password!");
+  const faqs = JSON.parse(localStorage.getItem('userFaqs') || "[]");
+  const ans = document.getElementById('ans'+idx).value;
+  faqs[idx].a = ans;
+  localStorage.setItem('userFaqs', JSON.stringify(faqs));
+  loadFaqs();
+}
+
+// FAQ form submission
+document.getElementById('faq-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const q = document.getElementById('faq-question').value.trim();
+  if (q.length === 0) return;
+  // Add to localStorage
+  const faqs = JSON.parse(localStorage.getItem('userFaqs') || "[]");
+  faqs.push({q:q});
+  localStorage.setItem('userFaqs', JSON.stringify(faqs));
+  // Show success
+  document.getElementById('faq-success').style.display = 'block';
+  setTimeout(()=>{document.getElementById('faq-success').style.display='none';}, 2000);
+  document.getElementById('faq-question').value = "";
+  loadFaqs();
+  // Send to EmailJS
+  emailjs.send('service_vs72qje', 'template_vm9bbht', {
+    question: q
+  })
+  .then(function() {
+    // optional: show sent status
+  }, function(error) {
+    // optional: show error status
+  });
+});
+
+loadFaqs();
+</script>
 </section>
     <!-- Sponsors -->
     <section id="sponsors" style="margin-bottom: 80px;">
