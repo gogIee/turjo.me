@@ -459,14 +459,62 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" style="margin-bottom: 80px;">
-      <h2>FAQ</h2>
-      <ul>
-        <li><strong>Q:</strong> How to join a tournament?<br/><strong>A:</strong> Click register and follow instructions.</li>
-        <li><strong>Q:</strong> What is the entry fee?<br/><strong>A:</strong> Entry fees vary per tournament, mostly free or 250 Taka.</li>
-        <li><strong>Q:</strong> Where to find winners list?<br/><strong>A:</strong> Check Champions Gallery section.</li>
-      </ul>
-    </section>
+    <!-- FAQ Section -->
+<section id="faq" style="margin-bottom: 80px;">
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Q:</strong> How to join a tournament?<br/><strong>A:</strong> Click register and follow instructions.</li>
+    <li><strong>Q:</strong> What is the entry fee?<br/><strong>A:</strong> Entry fees vary per tournament, mostly free or 250 Taka.</li>
+    <li><strong>Q:</strong> Where to find winners list?<br/><strong>A:</strong> Check Champions Gallery section.</li>
+  </ul>
+
+  <!-- Ask a Question Form -->
+  <div id="faq-form-container" style="margin-top:40px; max-width:500px; background:rgba(255,255,255,0.05); padding:32px; border-radius:14px; box-shadow:0 0 12px #00c8e622;">
+    <h3 style="color:#00c8e6; font-size:1.6em; font-weight:700; text-align:center; margin-bottom:18px;">Ask Your Question</h3>
+    <form id="faq-form">
+      <label style="color:#00c8e6; font-weight:600;">Your Name:</label>
+      <input type="text" name="faq_name" required placeholder="Enter your name" style="width:100%; padding:9px; margin:10px 0 18px; border:none; border-bottom:2px solid #00c8e6; background:transparent; color:#fff; font-size:1em;">
+      <label style="color:#00c8e6; font-weight:600;">Your Email:</label>
+      <input type="email" name="faq_email" required placeholder="Enter your email" style="width:100%; padding:9px; margin:10px 0 18px; border:none; border-bottom:2px solid #00c8e6; background:transparent; color:#fff; font-size:1em;">
+      <label style="color:#00c8e6; font-weight:600;">Your Question:</label>
+      <textarea name="faq_question" required rows="3" placeholder="Type your question here..." style="width:100%; padding:9px; margin:10px 0 22px; border:2px solid #00c8e6; border-radius:10px; background:transparent; color:#fff; font-size:1em; resize:vertical;"></textarea>
+      <button type="submit" id="faq-send-btn" style="background:linear-gradient(135deg,#00c8e6,#009bb3); border:none; padding:10px 28px; color:#000; font-weight:bold; border-radius:30px; cursor:pointer; font-size:1.05em; transition:background 0.3s;">Ask</button>
+    </form>
+    <div id="faq-thankyou" style="display:none; color:#00c8e6; text-align:center; margin-top:18px; font-weight:700;">Thank you! Your question has been sent.</div>
+  </div>
+</section>
+
+<!-- EmailJS SDK (if not already included above) -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("VYKK057zR_OaMB7bb"); // Same Public Key as before
+  })();
+
+  // FAQ form submission
+  const faqForm = document.getElementById("faq-form");
+  const faqButton = document.getElementById("faq-send-btn");
+  const faqThankYou = document.getElementById("faq-thankyou");
+  faqForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    faqButton.disabled = true;
+    faqButton.textContent = "Sending...";
+    emailjs.sendForm('service_vs72qje', 'template_faq', this)
+      .then(function() {
+        faqForm.reset();
+        faqThankYou.style.display = "block";
+        faqButton.textContent = "Ask";
+        faqButton.disabled = false;
+        setTimeout(()=>faqThankYou.style.display="none", 4000);
+      }, function(error) {
+        faqButton.textContent = "Failed. Try again";
+        setTimeout(() => {
+          faqButton.textContent = "Ask";
+          faqButton.disabled = false;
+        }, 3000);
+      });
+  });
+</script>
 
     <!-- Sponsors -->
     <section id="sponsors" style="margin-bottom: 80px;">
