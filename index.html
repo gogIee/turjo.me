@@ -392,45 +392,44 @@
     <!-- Tournaments -->
     <section id="tournaments" style="margin-bottom: 80px;">
       <h2>Tournaments</h2>
-      <div class="dashboard">
-        <div class="card">
-          <h4><i class="fas fa-fire text-warning"></i> Daily Scrim</h4>
-          <p><strong>Date:</strong> July 28, 2025</p>
-          <p><strong>Entry Fee:</strong> 25</p>
-          <p><strong>Prize:</strong> 250 BDT</p>
-          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register Now</a>
-        </div>
-        <div class="card">
-          <h4><i class="fas fa-users text-info"></i> Spacial Tournament</h4>
-          <p><strong>Date:</strong> N/A</p>
-          <p><strong>Entry Fee:</strong> 50</p>
-          <p><strong>Prize:</strong> 5000</p>
-          <a class="btn btn-primary" href="#">Coming Soon </a>
-        </div>
-        <div class="card">
-          <h4><i class="fas fa-shield-alt text-success"></i> Clash Squad Tournament</h4>
-          <p><strong>Date:</strong> August 10, 2025</p>
-          <p><strong>Entry Fee:</strong> 120 Taka</p>
-          <p><strong>Prize:</strong> <200 BDT </p>
-          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Coming soon</a>
-        </div>
-        <div class="card">
-          <h4><i class="fas fa-bolt text-danger"></i> Blast Tournament</h4>
-          <p><strong>Date:</strong> August 5, 2025</p>
-          <p><strong>Entry Fee:</strong> 70 Taka </p>
-          <p><strong>Prize:</strong> 1500 BDT </p>
-          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Coming soon</a>
-        </div>
-        <div class="card">
-          <h4><i class="fas fa-fist-raised text-primary"></i> Weekly Scrims</h4>
-          <p><strong>Date:</strong> Every Friday </p>
-          <p><strong>Entry Fee:</strong> 50 </p>
-          <p><strong>Prize:</strong> 500 </p>
-          <a class="btn btn-primary" href="#">Pre Register</a>
-        </div>
-      </div>
-    </section>
-
+     <!-- Tournaments Section : সংশোধিত অংশ -->
+<div class="dashboard">
+  <div class="card">
+    <h4><i class="fas fa-fire text-warning"></i> Daily Scrim</h4>
+    <p><strong>Date:</strong> July 28, 2025</p>
+    <p><strong>Entry Fee:</strong> 25</p>
+    <p><strong>Prize:</strong> 250 BDT</p>
+    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModalDaily">Register Now</a>
+  </div>
+  <div class="card">
+    <h4><i class="fas fa-users text-info"></i> Spacial Tournament</h4>
+    <p><strong>Date:</strong> N/A</p>
+    <p><strong>Entry Fee:</strong> 50</p>
+    <p><strong>Prize:</strong> 5000</p>
+    <a class="btn btn-primary" href="#">Coming Soon </a>
+  </div>
+  <div class="card">
+    <h4><i class="fas fa-shield-alt text-success"></i> Clash Squad Tournament</h4>
+    <p><strong>Date:</strong> August 10, 2025</p>
+    <p><strong>Entry Fee:</strong> 120 Taka</p>
+    <p><strong>Prize:</strong> <200 BDT </p>
+    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModalClash">Coming soon</a>
+  </div>
+  <div class="card">
+    <h4><i class="fas fa-bolt text-danger"></i> Blast Tournament</h4>
+    <p><strong>Date:</strong> August 5, 2025</p>
+    <p><strong>Entry Fee:</strong> 70 Taka </p>
+    <p><strong>Prize:</strong> 1500 BDT </p>
+    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModalBlast">Coming soon</a>
+  </div>
+  <div class="card">
+    <h4><i class="fas fa-fist-raised text-primary"></i> Weekly Scrims</h4>
+    <p><strong>Date:</strong> Every Friday </p>
+    <p><strong>Entry Fee:</strong> 50 </p>
+    <p><strong>Prize:</strong> 500 </p>
+    <a class="btn btn-primary" href="#">Pre Register</a>
+  </div>
+</div>
     <!-- Winners -->
     <section id="winners" style="margin-bottom: 80px;">
       <h2>Champions Gallery</h2>
@@ -587,27 +586,54 @@ loadFaqs();
       </form>
     </section>
 
-    <!-- Register Modal -->
-    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="registerModalLabel">Tournament Registration</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Registration form will be available soon.</p>
-            <p>Contact us via Facebook for more details.</p>
-            <a href="https://www.facebook.com/profile.php?id=61578322031694" target="_blank" class="btn btn-primary">Facebook Page</a>
-          </div>
-        </div>
+  <!-- Daily Scrim Modal -->
+<div class="modal fade" id="registerModalDaily" tabindex="-1" aria-labelledby="registerModalLabelDaily" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabelDaily">Daily Scrim Registration</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Register for Daily Scrim! Fill up the short form or contact us on Facebook.</p>
+        <!-- প্রয়োজন হলে ফর্মও যোগ করতে পারেন -->
+        <a href="https://www.facebook.com/profile.php?id=61578322031694" target="_blank" class="btn btn-primary">Facebook Page</a>
       </div>
     </div>
-
-    <footer>
-      &copy; 2025 Limitless Tournaments. All rights reserved.
-    </footer>
   </div>
+</div>
+
+<!-- Blast Tournament Modal -->
+<div class="modal fade" id="registerModalBlast" tabindex="-1" aria-labelledby="registerModalLabelBlast" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabelBlast">Blast Tournament Registration</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Blast Tournament registration will be open soon! Stay tuned or contact us for more info.</p>
+        <a href="https://www.facebook.com/profile.php?id=61578322031694" target="_blank" class="btn btn-primary">Facebook Page</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Clash Squad Tournament Modal -->
+<div class="modal fade" id="registerModalClash" tabindex="-1" aria-labelledby="registerModalLabelClash" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabelClash">Clash Squad Tournament Registration</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Clash Squad Tournament registration coming soon. Like our page and stay connected!</p>
+        <a href="https://www.facebook.com/profile.php?id=61578322031694" target="_blank" class="btn btn-primary">Facebook Page</a>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
